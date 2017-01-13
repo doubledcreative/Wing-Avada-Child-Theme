@@ -13,7 +13,7 @@ add_action( 'after_setup_theme', 'avada_lang_setup' );
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* Load LESS */
+/* Load LESS  */
 
 function childtheme_scripts() {
 
@@ -23,7 +23,7 @@ add_filter('style_loader_tag', 'my_style_loader_tag_function');
 wp_enqueue_script('less', get_stylesheet_directory_uri() .'/scripts/less.min.js', array('jquery'),'2.5.0');
 
 }
-add_action('wp_enqueue_scripts','childtheme_scripts', 150);
+add_action('wp_enqueue_scripts','childtheme_scripts', 1);
 
 function my_style_loader_tag_function($tag){   
   return preg_replace("/='stylesheet' id='less-css'/", "='stylesheet/less' id='less-css'", $tag);
@@ -64,7 +64,7 @@ add_action( 'template_redirect', 'wpd_remove_modified_date' );
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-/* Remove Query String */
+/* Remove Query String  */
 
 
 function _remove_script_version( $src ){
