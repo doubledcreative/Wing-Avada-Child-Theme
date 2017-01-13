@@ -1,0 +1,222 @@
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+Wing
+
+Theme Name: Avada Child Theme
+Author: Tom Brookes & Tom Dent
+Author URI: http://www.doubledcreative.com
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Contents
+
+- Less Mixins
+- Site Colours
+- Gravity Forms
+- Media Queries
+	- 1200px
+	- 1000px
+	- 800px
+	- 600px
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+The Grid Sizes Breakdown
+
+Global (Work)
+- 1600px Upwards	4 Column	80px Left Right Margin		40px Inner Margin
+- 1600px			3 Column	80px Left Right Margin		40px Inner Margin
+- 1400px			3 Column	40px Left Right Margin		40px Inner Margin
+- 1200px			2 Column	40px Left Right Margin		20px Inner Margin
+- 1024px			2 Column	20px Left Right Margin		20px Inner Margin
+- 800px				1 Column	20px Left Right Margin		1 0px Inner Margin
+	
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Less Mixins */
+
+.transition (@transition: all 0.2s ease-in-out) {
+	-webkit-transition:@transition;
+	-moz-transition:@transition;
+	-o-transition:@transition;
+	transition:@transition;
+}
+
+.transform(@string){
+	-webkit-transform:@string;
+	-moz-transform:@string;
+	-ms-transform:@string;
+	-o-transform:@string;
+	transform:@string;
+}
+
+.border-radius (@border-radius: 0px) {
+	-webkit-border-radius:@border-radius;
+	-moz-border-radius:@border-radius;
+	border-radius:@border-radius;
+}
+
+.box-shadow (@box-shadow: rgba(0,0,0,0)) {
+	-webkit-box-shadow:@box-shadow;
+	-moz-box-shadow:@box-shadow;
+	box-shadow:@box-shadow;
+}
+
+.bg-clip(){
+	-moz-background-clip:padding!important;
+	-webkit-background-clip:padding!important;
+	background-clip:padding-box!important;
+}
+
+.gradient (@degree: -45deg, @startColor: #000, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, @degree, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(@degree, @startColor, @endColor);
+	background: -moz-linear-gradient(@degree, @startColor, @endColor);
+	background: -ms-linear-gradient(@degree, @startColor, @endColor);
+	background: -o-linear-gradient(@degree, @startColor, @endColor);
+}
+
+.uppercase(){text-transform:uppercase!important;}
+ 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Colours */
+
+@white:  	#FFF!important;			/* White				*/
+@black:		#000!important;			/* Black 				*/
+@blue:		#00b6f1!important;		/* Blue 				*/
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Fonts */
+
+h1 {font-weight: 100!important;}
+h2 {font-weight: 100!important;}
+h3 {font-weight: 100!important;}
+h4 {font-weight: 100!important;}
+h5 {font-weight: 100!important; padding-bottom: 0!important;}
+h6 {font-weight: 100!important; padding-bottom: 0!important;}
+p {font-weight: 100!important;}
+
+.wing-page-header {padding: 220px 15% 220px 15%!important;
+	h1 {text-shadow:0 0 20px rgba(0,0,0,0.6);color:@white;}	
+	h2 {text-shadow:0 0 20px rgba(0,0,0,0.6);color:@white;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* MAIN */
+
+html{overflow-y:scroll!important;}
+body{-webkit-font-smoothing:subpixel-antialiased!important;}
+a:hover{.transition (@transition: all 0.2s ease-in-out);}
+.hover-type-zoomin:hover{
+	.fusion-column-inner-bg-image{opacity:1!important;}
+}
+iframe{border:none!important;}
+.wing_svg{width:100%;height:auto;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+.wing_video{margin-bottom:20px;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* The Grid Custom Styling */
+
+.wing-grid-latest-work {
+	.tg-nav-font {border-radius: 0px; }
+}
+
+.wing-grid-work .tg-nav-bg input {
+	.tg-nav-font {border-radius: 0px;}
+	.tg-filter-name {font-size: 18px!important; font-weight: 100!important; padding: 4px 20px!important;}
+	.tg-filter {border: 1px solid #d0d0d0!important; margin: 0 10px 10px 0!important;}
+	.tg-filter:hover {border: 1px solid #00b6f1!important;}
+	.tg-filter-active {border: 1px solid #00b6f1!important;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Testimonial Styling */
+
+.wing-testimonial {
+	p {font-size: 26px; font-weight: 100!important; font-style: normal; line-height: 36px; padding: 0 0 0 0!important;}
+	q {padding: 0 0 25px 0!important;}
+	.author {font-size: 18px; color: #00b6f1!important; text-align: -webkit-center; padding: 0 0 0 0px!important;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Social Icons - Padding & Margin */
+
+.wing-social-padding {padding-top: 10px;}
+.fusion-social-network-icon {margin-bottom:0px!important;}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Breakdown 
+
+1200px
+1000px
+800px
+600px
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1400PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media only screen and (max-width: 1400px) {
+	
+	.tg-grid-area-left {display:none;}
+	.tg-grid-area-right {display:none;}	
+    
+    .tg-grid-wrapper{margin-left:40px!important;margin-right:40px!important;}
+    
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1024PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media only screen and (max-width: 1024px) {
+    
+    .tg-grid-wrapper{margin-left:20px!important;margin-right:20px!important;}
+    
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 800PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media only screen and (max-width: 800px) {
+
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 500PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 500px) {
+	
+}
