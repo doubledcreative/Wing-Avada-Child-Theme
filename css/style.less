@@ -16,8 +16,24 @@ Contents
 - Site Colours
 - Gravity Forms
 - Media Queries
+	- 1200px
+	- 1000px
 	- 800px
-	- 500px
+	- 600px
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+The Grid Sizes Breakdown
+
+Global (Work)
+- 1600px Upwards	4 Column	80px Left Right Margin		40px Inner Margin
+- 1600px			3 Column	80px Left Right Margin		40px Inner Margin
+- 1400px			3 Column	40px Left Right Margin		40px Inner Margin
+- 1200px			2 Column	40px Left Right Margin		20px Inner Margin
+- 1024px			2 Column	20px Left Right Margin		20px Inner Margin
+- 800px				1 Column	20px Left Right Margin		1 0px Inner Margin
+	
 
 //////////////////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -70,20 +86,40 @@ Contents
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 /* Colours */
 
-
-@white:  	#FFF!important;		/* White				*/
-@black:		#000!important;		/* Black 				*/
+@white:  	#FFF!important;			/* White				*/
+@black:		#000!important;			/* Black 				*/
+@blue:		#00b6f1!important;		/* Blue 				*/
+@slate1:	#65696b!important;		/* Main Font Colour		*/
+@grey1:		#f4f4f4!important;		/* Light Grey			*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/* Fonts */
+
+h1 {font-weight: 100!important;}
+h2 {font-weight: 100!important;}
+h3 {font-weight: 100!important;}
+h4 {font-weight: 100!important;}
+h5 {font-weight: 100!important; padding-bottom: 0!important;}
+h6 {font-weight: 100!important; padding-bottom: 0!important;}
+p {font-weight: 100!important;}
+
+.wing-page-header{padding: 180px 15% 180px 15%!important;
+	.fusion-title{
+		h1, h2, h3, h4, h5, h6{text-shadow:0 0 20px rgba(0,0,0,0.6);color:@white!important;}
+		h5{font-size:60px;line-height:68px;}
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* MAIN */
 
-html{}
-body{-webkit-font-smoothing:subpixel-antialiased!important;}
+html{overflow-y:scroll!important;}
+body{-webkit-font-smoothing:subpixel-antialiased!important;font-weight:100!important;}
 a:hover{.transition (@transition: all 0.2s ease-in-out);}
 .hover-type-zoomin:hover{
 	.fusion-column-inner-bg-image{opacity:1!important;}
@@ -94,17 +130,161 @@ iframe{border:none!important;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+.fusion-main-menu > ul > li > a { font-weight: 100!important;}
+
+.fusion-main-menu{
+	.sub-menu{margin-top:-30px;}
+}
+
+.fusion-is-sticky{
+	.fusion-main-menu{
+		.sub-menu{margin-top:0px;}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 .wing_video{margin-bottom:20px;}
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Intro Container */
+
+.wing-intro{background:@grey1!important;padding:100px 20% 80px 20%!important;
+	.fusion-title{
+		h2{color:@blue;}
+		h3{color:@slate1;font-size:26px;line-height:36px;}
+	}
+	.fusion-title-size-three{margin-bottom:0!important;}
+	.sep-single{border-color:#e5e5e5;margin-bottom:50px!important;max-width:80px!important;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Get In Touch Container */
+
+.wing-get-in-touch{padding:160px 20% 150px 20%!important;
+	.wing-get-in-touch-left{}
+	.wing-get-in-touch-right{}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* The Grid - Top Navigation Filter Styling */
+
+
+.tg-nav-font {border-radius: 0px;}
+.tg-filter-name {font-size: 18px!important; font-weight: 100!important; padding: 4px 20px!important;}
+.tg-filter {border: 1px solid #d0d0d0!important; margin: 0 5px 0 5px!important;
+	&:hover {border: 1px solid #00b6f1!important;}
+}
+
+.tg-filter-active {border: 1px solid #00b6f1!important;}
+
+
+/* The Grid - Load More Styling */
+
+.tg-ajax-button {background-color: #f4f4f4!important; font-size: 18px!important; font-weight: 100!important; padding: 4px 20px!important; border: 0px solid #d0d0d0!important; margin: 0 10px 0 10px!important;
+	.tg-nav-color {color: #00b6f1!important;}
+}
+.tg-ajax-button:hover {background-color: #00b6f1!important; border: 0px solid #00b6f1!important;
+	.tg-nav-color {color: #ffffff!important;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Testimonial Styling */
+
+.wing-testimonial {
+	p {font-size: 26px; font-weight: 100!important; font-style: normal; line-height: 36px; padding: 0 0 0 0!important;}
+	q {padding: 0 0 25px 0!important;}
+	.author {font-size: 18px; color: #00b6f1!important; text-align: -webkit-center; padding: 0 0 0 0px!important;}
+}
+
+.fusion-testimonials.classic blockquote {background-color: rgba(255, 255, 255, 0)!important;}
+	
+.company-name{
+	strong, b {font-weight: normal;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Social Icons - Padding & Margin */
+
+.wing-social-padding {padding-top: 10px;}
+.fusion-social-network-icon {margin-bottom:0px!important;}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+/* Footer Styling */
+
+.wing-footer{border-right:1px solid #e5e5e5;}
+#footer{display:none;}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Breakdown 
+
+1200px
+1000px
+800px
+600px
+
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
-/* MEDIA QUERIES //////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1400PX ///////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
+
+@media only screen and (max-width: 1400px) {
+	
+	.tg-grid-area-left {display:none;}
+	.tg-grid-area-right {display:none;}	
+    
+    .tg-grid-wrapper{margin-left:40px!important;margin-right:40px!important;}
+    
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1024PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media only screen and (max-width: 1024px) {
+    
+    .tg-grid-wrapper{margin-left:20px!important;margin-right:20px!important;}
+    
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 800PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 @media only screen and (max-width: 800px) {
+	
+	.wing-footer {border-right: 0px solid #e5e5e5;}
 
 }
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 500PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
 
 @media only screen and (max-width: 500px) {
 	
