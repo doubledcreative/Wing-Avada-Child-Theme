@@ -55,15 +55,21 @@ Global (Work)
 }
 
 .border-radius (@border-radius: 0px) {
-	-webkit-border-radius:@border-radius;
-	-moz-border-radius:@border-radius;
-	border-radius:@border-radius;
+	-webkit-border-radius:@border-radius!important;
+	-moz-border-radius:@border-radius!important;
+	border-radius:@border-radius!important;
 }
 
-.box-shadow (@box-shadow: rgba(0,0,0,0)) {
-	-webkit-box-shadow:@box-shadow;
-	-moz-box-shadow:@box-shadow;
-	box-shadow:@box-shadow;
+.box-shadow (@box-shadow: 0 0 0 rgba(0,0,0,0)) {
+	-webkit-box-shadow:@box-shadow!important;
+	-moz-box-shadow:@box-shadow!important;
+	box-shadow:@box-shadow!important;
+}
+
+.appearance (@appearance: none) {
+	-webkit-appearance:@appearance!important;
+	-moz-appearance:@appearance!important;
+	appearance:@appearance!important;
 }
 
 .bg-clip(){
@@ -82,6 +88,9 @@ Global (Work)
 }
 
 .uppercase(){text-transform:uppercase!important;}
+
+
+.font1(){font-family: 'museo-slab'!important;}
  
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,7 +99,10 @@ Global (Work)
 
 @white:  	#FFF!important;			/* White				*/
 @black:		#000!important;			/* Black 				*/
+@orange:	#ff9900!important;		/* Orange 				*/
 @blue:		#00b6f1!important;		/* Blue 				*/
+@blue2:		#0091D2!important;
+@red:		#dc3030!important;		/* Red 					*/
 @slate1:	#65696b!important;		/* Main Font Colour		*/
 @grey1:		#f4f4f4!important;		/* Light Grey			*/
 
@@ -106,15 +118,9 @@ h5 {font-weight: 100!important; padding-bottom: 0!important;}
 h6 {font-weight: 100!important; padding-bottom: 0!important;}
 p {font-weight: 100!important;}
 
-.wing-page-header{padding: 180px 15% 180px 15%!important;
-	.fusion-title{
-		h1, h2, h3, h4, h5, h6{text-shadow:0 0 20px rgba(0,0,0,0.6);color:@white!important;}
-		h5{font-size:60px;line-height:68px;}
-	}
-}
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /* MAIN */
 
@@ -127,51 +133,278 @@ a:hover{.transition (@transition: all 0.2s ease-in-out);}
 iframe{border:none!important;}
 .wing_svg{width:100%;height:auto;}
 
+/* Vimeo Header Background Positioning */
+.video-background{
+	#video-1{left: 0!important;}
+}
+
+/* Blank Containers & Columns */
+.ddc-container-0{margin: 0 -40px!important; padding: 0!important;}
+.ddc-column-0{
+	.fusion-column-wrapper{margin: 0!important; padding: 0!important;}
+}
+
+/* TEMP HOMEPAGE SLIDER */
+.wing-temp-homepage{height: 900px!important;}
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-.fusion-main-menu > ul > li > a { font-weight: 100!important;}
+/* HEADER & NAV */
 
-.fusion-main-menu{
-	.sub-menu{margin-top:-30px;}
-}
+
+/* Main Navigation */
+
+.fusion-header{
+	.fusion-logo{margin-top:10px!important;
+	a{float:none;display:inline-block;text-align:center;width:50px;height:50px;overflow:hidden;background:url(http://e1f.55a.mwp.accessdomain.com/wp-content/uploads/wing_logo_animation.svg) left top no-repeat scroll transparent;
+		img[src$='.png']{display:none;}
+	}
+	&:after{content:"";height:18px;width:80px;background:url(http://e1f.55a.mwp.accessdomain.com/wp-content/uploads/wing_type_blue.svg) top center no-repeat scroll transparent;background-size:contain;margin-left:-14px;}
+	}
+	.fusion-main-menu{
+		ul{
+			li{
+				a{font-weight:100!important;text-shadow:0 0 20px rgba(0,0,0,0.5);
+					img{filter:drop-shadow(0 0 10px rgba(0,0,0,0.5));-webkit-filter:drop-shadow(0 0 10px rgba(0,0,0,0.5));}
+				}
+				.sub-menu{margin-top:-30px;border-top:3px solid @blue2;margin-left:-20px;
+					li{
+						a{text-shadow:none;background:@blue;color:@white;padding:8px 20px!important;font-size:16px!important;font-weight:400!important;border-bottom:1px solid rgba(255,255,255,0.3)!important;
+							&:hover{background:@blue2;.transition();
+						
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+} 
+
+
 
 .fusion-is-sticky{
-	.fusion-main-menu{
-		.sub-menu{margin-top:0px;}
+	.fusion-logo{margin-top:10px!important;
+		a{
+			img[src$='.png']{display:none!important;}
+		}
+		&:after{display:none;}
+	}
+	.fusion-header{height:72px!important;
+		.fusion-main-menu{
+			ul{
+				li{
+					a{text-shadow:none;line-height:72px!important;height:72px!important;
+						img{filter:none;}
+					}
+					.sub-menu{margin-top:0;
+						li{
+							a{height:auto!important;line-height:30px!important;}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
+
+/* Wing Logo */
+
+.wing-nav-wing-logo{
+	img{height:27px;vertical-align:middle;padding:0px 5px 4px 0;}
+} 
+
+/* WingMan Logo */
+
+.wing-nav-wingman-logo{
+	img{height:27px;vertical-align:middle;padding:0px 5px 4px 0;}
+} 
+
+/* Mobile Navigation */
+
+.fusion-mobile-nav-item a{height: 60px!important; line-height: 60px!important;}
+.fusion-open-submenu {line-height: 60px!important;}
+.fusion-mobile-menu-icons a{font-size: 20px!important; margin-top: 5px;}
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-.wing_video{margin-bottom:20px;}
+/* Slider */
+.wing-slider-logo {filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));-webkit-filter:drop-shadow(0 0 10px rgba(0,0,0,0.3));}
+.rs-fullvideo-cover {background-color: rgba(0, 0, 0, 0.4) !important;}
+.wing-slider-button{font-family: 'museo-slab'!important; font-weight: 600!important;}
+.wing-slider-text{font-family: 'museo-slab'!important; font-weight: 300!important; text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);}
+
+	
+////////////////////////////////////////////////////////////////////////////////////////////////////	
+
+
+/* Wing Page Header */
+
+.wing-page-header{padding: 180px 15% 180px 15%!important;background-color:@black;
+	.fusion-title{
+		h1, h2, h3, h4, h5, h6{text-shadow:0 0 20px rgba(0,0,0,0.6);color:@white!important;
+			a{color:@white;
+				&:hover{border-bottom:1px solid rgba(255,255,255,0.5);.transition (@transition: all 0.2s ease-in-out);}
+			}
+		}
+		h5{font-size:60px;line-height:68px;}
+	}
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-/* Intro Container */
+/* Wing Global */
 
-.wing-intro{background:@grey1!important;padding:100px 20% 80px 20%!important;
+.wing-intro{background:@grey1!important;padding:80px 20% 80px 20%!important;
 	.fusion-title{
 		h2{color:@blue;}
 		h3{color:@slate1;font-size:26px;line-height:36px;}
 	}
 	.fusion-title-size-three{margin-bottom:0!important;}
-	.sep-single{border-color:#e5e5e5;margin-bottom:50px!important;max-width:80px!important;}
+	.sep-single{border-color:#e5e5e5;margin-bottom:40px!important;max-width:80px!important;}
+}
+
+.wing-blue{background:@blue!important;
+	.fusion-title{
+		h2, h3, p{color:@white;}
+	}
+	.sep-single{border-color:rgba(255,255,255,0.2)!important;}
+}
+
+.wing-red{background:@red!important;
+	.fusion-title{
+		h2, h3{color:@white;}
+	}
+	.sep-single{border-color:rgba(255,255,255,0.2)!important;}
+}
+
+.wing-white{background:@white!important;
+	.fusion-title{
+		h2, h3, h4, h5, h6{color:@blue!important;}
+	}
+}
+
+.wing-grey{background:@grey1!important;
+	.fusion-title{
+		h2, h3, h4, h5, h6{color:@blue!important;}
+	}
+}
+
+.fusion-column-wrapper{
+	ul{
+		li{margin-left: -21px!important;}
+	}
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-/* Get In Touch Container */
+/* Wing Brand Logos Container */
 
-.wing-get-in-touch{padding:160px 20% 150px 20%!important;
-	.wing-get-in-touch-left{}
-	.wing-get-in-touch-right{}
+.wing-brand-logos{padding: 80px 0 80px 0!important;}
+
+.wing-brand-logos-white{background-color: @white!important;
+	.tg-item-inner{background-color: @grey1!important;}
 }
+
+.wing-brand-logos-grey{background-color: @grey1!important;
+	.tg-item-inner{background-color: @white!important;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Wing Work Grid Container */
+
+.wing-work-grid{padding: 80px 0 80px 0!important;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Image Box 16x9 */
+
+.wing-img-box-16x9{
+	.fusion-column-wrapper{padding:30% 0 30% 0!important;}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Wing Team */
+
+.wing-team{padding: 80px 40px 20px 40px!important; background: @white!important;
+	.wing-team-box{margin-bottom: 60px!important;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Wing Half Copy */
+
+.wing-half-half{padding:0 0 0 0!important;
+	
+	.fusion-title{
+		h2{color:@blue;}
+		h3{color:@slate1;font-size:26px;line-height:36px;}
+		h4{color:@slate1;}
+		.fusion-title-size-three{margin-bottom:20px!important;}
+	}
+	
+	.sep-single{border-color:#e5e5e5;margin-bottom:40px!important;max-width:80px!important;}
+	
+	.wing-half-video{
+		.fusion-column-wrapper{background-color: rgba(0, 0, 0, 0.5);}
+		.fa{width: 100%; display: inline-block; position: absolute; top: 0; bottom: 0%; height: 100px; margin: auto; vertical-align: middle; left: 0;}
+		
+		a{display: block; position: absolute; top: 0; bottom: 0; width: 100%;
+			.fa{color: @white!important;}
+		}
+		&:hover{
+			.fa{color: @blue!important;}
+		}
+	}
+	
+	.wing-half-copy{
+		.fusion-column-wrapper{padding:10% 10% 8% 10%!important;}
+	}
+	
+	.wing-video{margin-top: 40px; max-height: none!important; max-width: none!important;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Contact Page - Containers & Icon Styling */
+
+.wing-contact{background:@white!important;padding:80px 10% 80px 10%!important;
+	.sep-single{border-color:#e5e5e5;margin-bottom:20px!important;}
+	a{color:@slate1!important; border-bottom: 1px dashed rgba(0, 0, 0, 0)!important;
+		&:hover{color:@slate1!important; border-bottom: 1px dashed @slate1!important;}
+	}
+	.fa-mobile{font-size: 28px!important; vertical-align: sub; padding: 0 4px 0 0;}
+	.fa-envelope{padding: 6px 30px 0 7px;}
+	.fa-map-marker{font-size: 24px!important; vertical-align: text-bottom; padding: 0 25px 0 10px;}
+	
+	p{display:flex;}
+}
+
+.wing-form{background:@blue!important;padding:80px 20% 80px 20%!important;}
+
+
+/* Global Google Map Stying */
+
+.gm-style .gm-style-iw {font-family: 'museo-slab'; font-size: 16px; font-weight: 100; color: @slate1; padding: 15px 11px 12px 11px;}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -179,10 +412,9 @@ iframe{border:none!important;}
 
 /* The Grid - Top Navigation Filter Styling */
 
-
 .tg-nav-font {border-radius: 0px;}
 .tg-filter-name {font-size: 18px!important; font-weight: 100!important; padding: 4px 20px!important;}
-.tg-filter {border: 1px solid #d0d0d0!important; margin: 0 5px 0 5px!important;
+.tg-filter {border: 1px solid #d0d0d0!important; margin: 0 5px 10px 5px!important;
 	&:hover {border: 1px solid #00b6f1!important;}
 }
 
@@ -201,46 +433,332 @@ iframe{border:none!important;}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 /* Testimonial Styling */
 
-.wing-testimonial {
+.wing-testimonials{background-color: @grey1!important; padding: 120px 20% 120px 20%!important;
+	
 	p {font-size: 26px; font-weight: 100!important; font-style: normal; line-height: 36px; padding: 0 0 0 0!important;}
-	q {padding: 0 0 25px 0!important;}
-	.author {font-size: 18px; color: #00b6f1!important; text-align: -webkit-center; padding: 0 0 0 0px!important;}
+	q {padding: 0 0 25px 0!important; background-color: rgba(0, 0, 0, 0)!important;}
+	.author{font-size: 18px; color: #00b6f1!important; text-align: -webkit-center; padding: 0 0 0 0px!important;}
+	.fusion-testimonials.classic blockquote {background-color: rgba(255, 255, 255, 0)!important;}
+	.company-name{
+		strong, b {font-weight: normal;}
+	}
+	.fusion-testimonials.classic.fusion-testimonials-1 .author:after {border-top-color: rgba(255, 255, 255, 0) !important;}
+	
 }
 
-.fusion-testimonials.classic blockquote {background-color: rgba(255, 255, 255, 0)!important;}
-	
-.company-name{
-	strong, b {font-weight: normal;}
+.wing-testimonials-white{background-color: @white!important;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Wing Mono Container */
+
+.wing-mono-container{-webkit-filter:grayscale(100%);filter: grayscale(100%);.transition (@transition: all 0.5s ease-in-out);
+	&:hover{-webkit-filter:grayscale(0%);filter: grayscale(0%);.transition (@transition: all 0.5s ease-in-out);}
+	img{}
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 /* Social Icons - Padding & Margin */
 
-.wing-social-padding {padding-top: 10px;}
-.fusion-social-network-icon {margin-bottom:0px!important;}
+.fusion-social-networks-wrapper{margin:0!important;
+	.fusion-social-network-icon{margin:5px!important;}
+}
 
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////
-	
-	
-/* Footer Styling */
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
-.wing-footer{border-right:1px solid #e5e5e5;}
+
+/* Get In Touch Container */
+
+.wing-get-in-touch{padding:160px 40px 150px 40px!important;
+	h5{color: white!important;}
+	.wing-get-in-touch-right{
+		.fusion-button{background-color:@orange!important;padding-right:35px;
+			.fusion-button-text{color: @white!important;}
+			.fa{color: @white!important;}	
+			&:hover{background-color:#ff8200!important;
+				.fusion-button-text{color:@white!important;}
+				.fa{color:@white!important;}	
+			}
+		}
+	}	
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Footer Styling - Widget Linebreak */
+
+.wing-footer{border-right:1px solid #e5e5e5; margin: 80px 0!important; display: block; float: right; width: 500px;}
+.wingman-footer{margin: 80px 0; display: block; float: left; width: 500px;}
 #footer{display:none;}
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-Breakdown 
+/* Footer */
 
-1200px
-1000px
-800px
-600px
+.fusion-footer{margin: 0!important;
+	.fusion-footer-widget-area{padding:0!important; margin: 0!important;
+		.fusion-row{max-width:1200px !important;}
+		.col-lg-4{padding: 0px;
+			&:nth-child(1){width:100%!important;margin:0!important;}
+			&:nth-child(2){width:50%!important;margin:0!important;}
+			&:nth-child(3){width:50%!important;margin:0!important;}
+		}
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* WINGMAN */
+
+.page-id-443, .wingman{
+	.mask{background-color:@red;}
+	.current-menu-item > a{color:@white;}
+	.fusion-logo{margin-top:10px!important;
+		a{width:64px;height:51px;overflow:hidden;background:url(http://e1f.55a.mwp.accessdomain.com/wp-content/uploads/wingman-logo.svg) left top no-repeat scroll transparent;
+			img[src$='.png']{display:none;}
+		}
+		&:after{display:none;}
+	}
+	.fusion-is-sticky{
+		.current-menu-item > a{color:@slate1;}
+		.fusion-logo{margin-top:10px!important;
+			a{
+				img[src$='.png']{display:none!important;}
+			}
+			&:after{display:none;}
+		}
+	}
+}
+
+
+/* WingMan Page Header */
+
+.wingman-page-header{padding:0 0 0 0!important;
+	.fusion-column-wrapper{background-color:rgba(29,32,33,0.5)!important;padding:95px 0 95px 0!important;}
+}
+
+/* WingMan Title Container */
+
+.wingman-title{background:@grey1!important;padding:80px 20% 0 20%!important;
+	.fusion-title{
+		h2{color:@red;}
+		h3{color:@slate1;font-size:26px;line-height:36px;}
+	}
+	.fusion-title-size-three{margin-bottom:0!important;}
+	.sep-single{border-color:#e5e5e5;margin-bottom:40px!important;max-width:80px!important;}
+}
+
+
+/* WingMan - 50/50 Container */
+
+.wingman-half-half{background:@white!important; padding:0 0 0 0!important;
+	
+	.fusion-title{
+		h2{color:@red;}
+		h3{color:@slate1;font-size:26px;line-height:36px;}
+		h4{color:@blue;}
+		.fusion-title-size-three{margin-bottom:20px!important;}
+	}
+	
+	.sep-single{border-color:#e5e5e5;margin-bottom:40px!important;max-width:80px!important;}
+	
+	.wingman-half-video{
+		.fusion-column-wrapper{background-color: rgba(0, 0, 0, 0.5);}
+		.fa{width:100%;display:inline-block; position: absolute; top: 0; bottom: 0%; height: 100px; margin: auto; vertical-align: middle; left: 0;}
+		
+		a{display: block; position: absolute; top: 0; bottom: 0; width: 100%;
+			.fa{color: @white!important;}
+		}
+		&:hover{
+			.fa{color: @blue!important;}
+		}
+	}
+	
+	.wingman-half-copy{
+		.fusion-column-wrapper{padding:10% 10% 8% 10%!important;}
+	}
+	
+	.wingman-video{margin-top: 40px; max-height: none!important; max-width: none!important;}
+}
+
+
+/* WingMan - Need A Wing Man */
+
+.wingman-cta{padding:160px 40px 150px 40px!important; margin: 0!important;
+	.wingman-cta-right{
+		.fusion-button{background-color:@blue!important;padding-right:35px;
+			.fusion-button-text{color:@white!important;}
+			.fa{color: @white!important;}	
+			&:hover{background-color:#1291D0!important;
+				.fusion-button-text{color:@white!important;}
+				.fa{color:@white!important;}	
+			}
+		}
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* POSTS */
+
+/* Video Columns */
+
+
+.wing-vid-1col{padding:80px!important;}
+.wing-vid-2col{padding:80px 40px!important;
+	.video-js-box{margin-bottom:30px!important;}
+}
+.wing-vid-3col{padding:80px!important;}
+
+
+.video-js-box{
+	.video-js{
+		&:hover{.box-shadow (@box-shadow: 0 0 20px rgba(0,0,0,0.3));.transition (@transition: all 0.5s ease-in-out);}
+	}
+	
+}
+
+/* Hide Meta */
+
+.fusion-meta-info{display:none!important;}
+
+.single-post{
+	.fusion-page-title-bar{display:none!important;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* TAG ARCHIVE */
+
+.tag, .search{
+	.fusion-header-wrapper{position:absolute;z-index:10010;left:0;right:0;
+		.fusion-header{background:none!important;}
+		.fusion-sticky-shadow{background:@white;}
+	}
+	.fusion-page-title-bar{background-image: url(/wp-content/uploads/brands-header.png);height:502px;background-color:@black;
+		.fusion-breadcrumbs{color:rgba(0,0,0,0);
+			span{display:none;}
+			.breadcrumb-leaf{display:inline-block;color:@white;font-size:60px;line-height:68px;}
+		}
+	}
+	#main{
+		#content{margin:80px 0 60px;
+			.fusion-post-wrapper{border:none;
+				.fusion-post-content-wrapper{display:none;}
+			}
+		}
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* GRAVITY FORMS */
+
+.gform_wrapper{margin: 21px 7px 0px 7px!important;
+	
+	.gform_body{width:100%!important;
+		.gform_fields{
+			.gfield{padding:0!important; margin-top:0!important; margin-bottom:20px!important;
+				.ginput_container{
+					input, textarea,{padding:10px 15px!important; margin:0!important; .font1(); font-weight: 100!important; font-size:18px!important; width:100%!important; color: @slate1!important; background-color: @grey1;
+						&:focus{outline: none!important; background: #fff8db!important; .transition();}
+					}
+					input{height:60px!important; .border-radius(); .appearance();}
+					textarea{padding:17px 15px!important; .border-radius(); .appearance();}
+					.name_first, .name_last{
+						label{display:none;}
+					}
+				}
+			}
+		}
+	}
+	
+	div.gform_body {
+		ul.gform_fields {
+			li.gfield.gfield_html{border-top: 1px solid @grey1!important; padding-top: 20px!important;}
+		}
+	}
+	
+	.gform_footer{width:100%; display:block; margin:40px 0 0 0!important; padding:0!important;
+		input[type=submit]{.font1(); display:block!important; margin: 0 auto 10px!important; font-size:18px!important; line-height:21px!important; padding:17px 40px!important; .border-radius(); .uppercase();
+			&:hover{.transition(); background: #ff8200!important; color: @white!important;}
+		}
+	}
+	
+}
+
+
+/* Float Left and Right for Single Line Text Fields */
+#field_1_4, #field_1_5{width:49%;clear:none!important;}
+#field_1_4{float:left;}
+#field_1_5{float:right;}
+
+
+/* Placeholder Font Colour */
+::-webkit-input-placeholder{color:#8f9192!important;}
+:-moz-placeholder{color:#8f9192!important;}
+::-moz-placeholder{color:#8f9192!important;}
+:-ms-input-placeholder{color:#8f9192!important;}
+.placeholder{color:#8f9192!important;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* GRAVITY VALIDATION FORM */
+
+/* Validation Styling */
+.validation_error{display: none;}
+
+
+/* Body & Field Styling */
+.gform_body{
+	li.gfield.gfield_error{border: none!important;}
+	.validation_message {color: @white; .font1(); margin: 0 15px!important; font-size: 12px!important; font-weight: 100!important; -webkit-font-smoothing: subpixel-antialiased;}
+	.gform_fields, gfield, gfield_contains_required{
+		.gfield_error{background-color: #006eac!important; margin-bottom: 20px!important;			
+			.ginput_container{margin: 0!important; max-width: 100%!important;
+				.textarea, .large{border: 2px solid #006eac!important;}
+			}
+			.ginput_container_text{margin: 0!important; max-width: 100%!important;
+				.gfield_description, ginput_container{margin: 0!important; .font1();}
+			}
+		}
+		
+	}
+	.field_description_below{
+		.gfield_description{ padding-top: 0!important;}
+	}
+
+}
+
+/* Validation Fields - Width 100% */
+#field_1_2, #field_1_6{min-width: 100%!important; width:100%;}
+
+
+
+
+
 
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -250,42 +768,618 @@ Breakdown
 
 @media only screen and (max-width: 1400px) {
 	
+	
+	/* The Grid - Latest Work - Hides Left/ Right Arrows */
+	
 	.tg-grid-area-left {display:none;}
 	.tg-grid-area-right {display:none;}	
-    
     .tg-grid-wrapper{margin-left:40px!important;margin-right:40px!important;}
     
+    .wing-latest-work-horizontal{
+	    .tg-grid-wrapper{margin-left:0!important;margin-right:0!important;}
+    }
+    
+   
 }
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1200PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 1200px) {
+	
+	
+	/* Get In Touch Container */
+
+	.wing-get-in-touch{padding:160px 40px 150px 40px!important;
+		.fusion-row{
+			.fusion-layout-column{width: 100%!important;}
+		}
+		.wing-get-in-touch-left{
+			.title-heading-right{text-align: center!important;}
+		}
+		.wing-get-in-touch-right{
+			.fusion-button-wrapper {display: block!important; text-align: center!important; margin-top: 15px!important;}
+			.fusion-alignleft {float: none!important; margin-right: 0!important;}
+		}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+		
+	/* WingMan - Need A Wing Man */
+
+	.wingman-cta{padding:160px 40px 150px 40px!important;
+		.fusion-row{
+			.fusion-layout-column{width: 100%!important;}
+		}
+		.wingman-cta-left{
+			.title-heading-right{text-align: center!important;}
+		}
+		.wingman-cta-right{
+			.fusion-button-wrapper {display: block!important; text-align: center!important; margin-top: 15px!important;}
+			.fusion-alignleft {float: none!important; margin-right: 0!important;}
+		}
+	}
+	
+	
+	
+}
+
+
+
+
+
 
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /* MEDIA QUERIES 1024PX ///////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
+
 @media only screen and (max-width: 1024px) {
-    
+	
+	
+	
+	.wing-intro{padding:80px 10% 80px 10%!important;}
+
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////	
+	
+	
+	/* SLIDER CSS */
+
+	/* #rev_slider_6_1_forcefullwidth{margin-top: -100px!important;} */
+	.wing-slider-arrow{display: none!important;} 
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+
+	/* Page Header */
+
+	.wing-page-header{padding: 160px 10% 100px 10%!important; display: block;
+		.fusion-title{
+			h5{font-size:46px; line-height:60px;}
+		}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Contact Page - Containers & Icon Styling */
+
+	.wing-contact{padding:80px 10% 80px 10%!important;
+		.fusion-row{
+			.fusion-layout-column{width: 100%!important;
+				.fusion-column-wrapper{min-height: 1px!important;
+					.fusion-column-content-centered{min-height: 1px!important;}
+				}
+			}
+		}
+		img{margin-bottom: 80px!important;}
+	}
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* The Grid - Margins */
+	
     .tg-grid-wrapper{margin-left:20px!important;margin-right:20px!important;}
+    
+    .wing-latest-work-horizontal{
+	    .tg-grid-wrapper{margin-left:0!important;margin-right:0!important;}
+    }
+    
+    
+ 	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* WingMan - 50/50 Container */
+
+	.wingman-half-half{padding:40px 0 40px 0!important;
+		
+		.fusion-row{
+			.fusion-layout-column{width: 100%!important;
+				.fusion-column-wrapper{min-height: 1px!important;
+					.fusion-column-content-centered{min-height: 1px!important;}
+				}
+			}
+		}
+		
+		.wingman-half-copy{
+			.fusion-column-wrapper{padding:40px 80px 40px 80px!important;}
+		}
+		.wingman-video{margin-top: 40px; max-height: none!important; max-width: none!important;}
+	}
+	    
+    
+ 	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Wing - 50/50 Container */
+
+	.wing-half-half{padding:40px 0 40px 0!important;
+		
+		.fusion-row{
+			.fusion-layout-column{width: 100%!important;
+				.fusion-column-wrapper{min-height: 1px!important;
+					.fusion-column-content-centered{min-height: 1px!important;}
+				}
+			}
+		}
+		
+		.wing-half-copy{
+			.fusion-column-wrapper{padding:40px 80px 40px 80px!important;}
+		}
+		.wing-video{margin-top: 40px; max-height: none!important; max-width: none!important;}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Footer Styling - Widget Linebreak */
+
+	.wing-footer{border-right:1px solid #e5e5e5; margin: 80px 0!important; display: block; float: right; width: 395px;}
+	.wingman-footer{margin: 80px 0; display: block; float: left; width: 395px;}
+   
     
 }
 
 
 
+
+
+
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
-/* MEDIA QUERIES 800PX ///////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 800PX ////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
 
 @media only screen and (max-width: 800px) {
 	
-	.wing-footer {border-right: 0px solid #e5e5e5;}
 
+	/* HEADER & NAV */
+	
+	.mobile-menu-design-modern{
+		.fusion-header{padding: 0 20px!important;
+			.fusion-row{padding-top: 10px!important; padding-bottom: 0!important;
+				
+				.fusion-logo{
+					&:after{display: none;}
+				}
+				
+				.fusion-mobile-menu-icons{
+					.fusion-icon{color: @blue!important; font-size: 24px!important; margin: 13px 0;}
+				}
+				
+				.fusion-mobile-nav-holder{padding-top: 0!important;
+					.fusion-mobile-nav-item{
+						.menu-text{
+							img{padding: 0px!important;}
+						}
+					}
+				}
+				
+			}
+		} 
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	/* CONTAINERS */
+
+	/* Wing Brand Logos Container */
+	.wing-brand-logos{padding: 60px 0!important;}
+	
+	/* Testimonial Container */
+	.wing-testimonials{padding: 60px 10%!important;}
+	
+	/* Wing Intro Container */
+	.wing-intro{padding: 60px!important;}
+	
+	/* WingMan Title Container */
+	.wingman-title{padding:60px 20% 0 20%!important;}
+	
+	/* Wing Work Grid Container */
+	.wing-work-grid{padding: 60px 0 60px 0!important;}
+	
+	/* Contact Page Containers */
+	.wing-form{padding: 60px!important;}
+	.wing-contact{padding:60px!important;}
+	
+	
+	/* Blank Containers & Columns */
+	.ddc-container-0{margin: 0 -40px!important; padding: 0!important;}
+	.ddc-column-0{
+		.fusion-column-wrapper{margin: 0!important; padding: 0!important;}
+	}
+	
+		
+	////////////////////////////////////////////////////////////////////////////////////////////////
+			
+	
+	/* Page Header */
+
+	.wing-page-header{padding: 80px 50px 60px 50px!important;
+		.fusion-title{
+			h5{font-size:30px; line-height:42px;}
+		}
+		.fusion-separator{margin-top: 0!important; margin-bottom: 19px!important;}
+	}
+	
+	
+	/* WingMan Page Header */
+
+	.wingman-page-header{padding:0 0 0 0!important;
+		.fusion-column-wrapper{background-color:rgba(29,32,33,0.5)!important;padding: 0!important;}
+	}
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Wing Team */
+
+	.wing-team{padding: 80px 40px 20px 40px!important;
+		.wing-team-box{margin-bottom: 60px!important;
+			.fusion-title{margin-top: 30px!important; margin-bottom: 0!important;}
+		}
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Get In Touch Container */
+
+	.wing-get-in-touch{padding: 60px 40px 60px 40px!important; margin: 0!important;
+		.wing-get-in-touch-left{
+			.title-heading-right{text-align: center!important;}
+		}
+		.wing-get-in-touch-right{
+			.fusion-button-wrapper {display: block!important; text-align: center!important; margin-top: 0!important;}
+			.fusion-alignleft {float: none!important; margin-right: 0!important;}
+		}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* WingMan - Need A Wing Man */
+
+	.wingman-cta{padding: 60px 40px 60px 40px!important; margin: 0!important;
+		.wingman-cta-left{
+			.title-heading-right{text-align: center!important;}
+		}
+		.wingman-cta-right{
+			.fusion-button-wrapper {display: block!important; text-align: center!important; margin-top: 0!important;}
+			.fusion-alignleft {float: none!important; margin-right: 0!important;}
+		}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* WingMan - 50/50 Container */
+
+	.wingman-half-half{padding:40px 0 40px 0!important;
+		
+		.fusion-row{
+			.fusion-layout-column{width: 100%!important;
+				.fusion-column-wrapper{min-height: 1px!important;
+					.fusion-column-content-centered{min-height: 1px!important;}
+				}
+			}
+		}
+		
+		.wingman-half-copy{
+			.fusion-column-wrapper{padding:20px 60px 20px 60px!important;}
+		}
+	}
+
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Wing - 50/50 Container */
+
+	.wing-half-half{padding:40px 0 40px 0!important;
+		
+		.fusion-row{
+			.fusion-layout-column{width: 100%!important;
+				.fusion-column-wrapper{min-height: 1px!important;
+					.fusion-column-content-centered{min-height: 1px!important;}
+				}
+			}
+		}
+		
+		.wing-half-copy{
+			.fusion-column-wrapper{padding:20px 60px 20px 60px!important;}
+		}
+	}
+
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Blue Title Bar */
+	
+	.wing-blue-title-bar {
+		.fusion-title {margin-bottom: 0!important;}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Footer Styling - Widget Linebreak */
+
+	.wing-footer{border-right:0 solid #e5e5e5; margin: 60px 0!important; display: block; float: none; width: 100%;}
+	.wingman-footer{margin: 60px 0; display: block; float: none; width: 100%;
+		img{height: 150px!important;}
+	}
+
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	/* Footer */
+	
+	.single-post{
+		.post-content{margin-bottom: -50px!important;}
+	}
+
+	.fusion-footer{
+		.fusion-footer-widget-area{padding:0!important;
+			.fusion-row{max-width:100% !important;}
+			.col-lg-4{
+				&:nth-child(1){width:100%!important;margin:0!important;}
+				&:nth-child(2){width:100%!important;margin:0!important;}
+				&:nth-child(3){width:100%!important;margin:0!important;}
+			}
+		}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Video Columns */
+	
+	.wing-vid-1col{padding:60px!important;}
+	
+	.wing-vid-2col{padding:20px 60px 60px!important;
+		.fusion-column-wrapper{margin-top: 40px!important;
+			p:last-of-type{margin-bottom: 0!important;}
+
+		}
+	}
+	
+	.wing-vid-3col{padding:40px!important;
+		.fusion-column-wrapper{
+			.fusion-title-size-two{margin-top: 25px!important; margin-bottom: 10px!important;
+				h2{font-size: 24px!important; line-height: 32px!important;}
+			}
+			p:last-of-type{margin-bottom: 0!important;}
+		}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Main Navigation - Social Link */
+
+	.wing-nav-social{padding-left: 0!important; padding-right: 0!important;
+		.menu-text{font-size: 24px!important;}
+	}
+
+	
 }
 
 
+
+
+
+
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
-/* MEDIA QUERIES 500PX ///////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 500PX ////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
 @media only screen and (max-width: 500px) {
+	
+	
+	/* FONTS */
+	
+	h3{font-size: 20px!important; line-height: 30px!important;}
+		
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////	
+	
+	
+	/* CONTAINERS */
+	
+	/* Blank Containers & Columns */
+	.ddc-container-0{margin: 0 -40px!important; padding: 0!important;}
+	.ddc-column-0{
+		.fusion-column-wrapper{margin: 0!important; padding: 0!important;}
+	}
+	
+	/* Wing Work Grid Container */
+	.wing-work-grid{padding: 40px 0!important;
+		.sep-single{margin-bottom:20px!important;max-width:40px!important;}
+	}
+	
+	/* Wing Intro Container */
+
+	.wing-intro{padding:40px!important;
+		.sep-single{margin-bottom:20px!important;max-width:40px!important;}
+	}
+	
+	/* Wing Brand Logos Container */
+	.wing-brand-logos{padding: 40px 0!important;
+		.sep-single{margin-bottom:30px!important;max-width:40px!important;}
+	}
+	
+	/* Testimonial Styling */
+
+	.wing-testimonials{padding: 40px 10%!important;
+		p{font-size: 20px; font-weight: 100!important; font-style: normal; line-height: 28px; padding: 0 0 0 0!important;}
+		.sep-single{margin-bottom:20px!important; max-width:40px!important;}
+	}
+	
+	/* WingMan Title Container */
+	
+	.wingman-title{padding:40px 40px 0px 40px!important; margin-bottom: -20px;
+		.sep-single{margin-bottom:20px!important; max-width:40px!important;}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+
+	
+	/* Page Header */
+
+	.wing-page-header{padding: 40px 50px 15px 50px!important;
+		.fusion-title{
+			h5{font-size:30px; line-height:42px;}
+		}
+		.fusion-separator{margin-top: 0!important; margin-bottom: 19px!important; max-width:40px!important;}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+		
+	
+	/* Contact Page - Containers & Icon Styling */
+
+	.wing-contact{padding:50px 40px 20px 40px!important;
+		h2{font-size: 30px!important; line-height: 40px!important;}	
+		img{margin-bottom: 30px!important;}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Wing Team */
+
+	.wing-team{padding: 60px 40px 0 40px!important;
+		.wing-team-box{margin-bottom: 60px!important;
+			.fusion-title{margin-top: 25px!important; margin-bottom: 0!important;}
+		}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* WingMan - 50/50 Container */
+
+	.wingman-half-half{padding: 0!important;
+		.wingman-half-copy{
+			.fusion-column-wrapper{padding:40px!important;}
+			.sep-single{margin-bottom:20px!important; max-width:40px!important;}
+		}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	/* Wing - 50/50 Container */
+
+	.wing-half-half{padding:20px 0 60px 0!important;
+		.sep-single{margin-bottom:20px!important;max-width:40px!important;}
+		.wing-half-copy{
+			.fusion-column-wrapper{padding:40px 40px 20px 40px!important;}
+		}
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Footer Styling */
+
+	.wing-footer{font-size: 16px; line-height: 24px;}
+	.wingman-footer{font-size: 16px; line-height: 24px;}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* Video Columns */
+	
+	.wing-vid-1col{padding:40px 40px !important;}
+	
+	.wing-vid-2col{padding:0px 40px 50px!important;
+		.fusion-column-wrapper{margin-top: 40px!important;}
+	}
+	
+	.wing-vid-3col{padding:40px 40px!important;}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////	
+	
+	
+	/* Contact Page - Container */
+	
+	.wing-form{padding: 35px 30px 40px 30px!important;}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* GRAVITY FORMS */
+	
+	/* Float Left and Right for Single Line Text Fields */
+	#field_1_4, #field_1_5{min-width: 100%; float: left;}
+	
+	.gform_wrapper{margin-top: 30px!important;
+		.top_label{
+			div.ginput_container{margin-top: 0!important;}
+		}
+	}
+
 	
 }
