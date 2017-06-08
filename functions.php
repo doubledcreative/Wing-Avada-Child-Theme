@@ -10,8 +10,10 @@ function avada_lang_setup() {
 	load_child_theme_textdomain( 'Avada', $lang );
 }
 add_action( 'after_setup_theme', 'avada_lang_setup' );
+
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /* Load LESS  */
 
@@ -31,16 +33,23 @@ function my_style_loader_tag_function($tag){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/*function extra_css () {
+	wp_register_script( 'custom', get_stylesheet_directory_uri() . '/scripts/wing.js' );
+	wp_register_script( 'motio', get_stylesheet_directory_uri() . '/scripts/motio.min.js' );
+	wp_enqueue_script( 'custom' );
+	wp_enqueue_script( 'motio' );
+} 
+
+add_action('wp_print_styles', 'extra_css', 151);*/
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 /* Remove Date from Yoast SEO */
 
 add_filter( 'wpseo_show_date_in_snippet_preview', false);
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-add_shortcode( 'divider', 'shortcode_insert_divider' );
-function shortcode_insert_divider( ) {
-return '<div class="divider"></div>';
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -90,6 +99,7 @@ function _remove_script_version( $src ){
 add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -102,3 +112,51 @@ add_filter("gform_init_scripts_footer", "init_scripts");
 function init_scripts() {
 return true;
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* SVG Support */	
+
+
+function bodhi_svgs_disable_real_mime_check( $data, $file, $filename, $mimes ) {
+    $wp_filetype = wp_check_filetype( $filename, $mimes );
+
+    $ext = $wp_filetype['ext'];
+    $type = $wp_filetype['type'];
+    $proper_filename = $data['proper_filename'];
+
+    return compact( 'ext', 'type', 'proper_filename' );
+}
+add_filter( 'wp_check_filetype_and_ext', 'bodhi_svgs_disable_real_mime_check', 10, 4 );
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Add Category Name to Body Class */	
+
+add_filter('body_class','add_category_to_single');
+function add_category_to_single($classes, $class) {
+  if (is_single() ) {
+    global $post;
+    foreach((get_the_category($post->ID)) as $category) {
+      // add category slug to the $classes array
+      $classes[] = $category->category_nicename;
+    }
+  }
+  // return the $classes array
+  return $classes;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Add Tags Shortcode */	
+
+
+function sc_taglist(){
+	
+    return get_the_tag_list('',' ','');
+}
+add_shortcode('tags', 'sc_taglist');
