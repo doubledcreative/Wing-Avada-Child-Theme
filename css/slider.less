@@ -1,0 +1,80 @@
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Wing
+
+Theme Name: Avada Child Theme
+Author: Tom Brookes & Tom Dent
+Author URI: http://www.doubledcreative.com
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/* HOMEPAGE SLIDER */
+
+.wing-slider-logo {filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));-webkit-filter:drop-shadow(0 0 10px rgba(0,0,0,0.3));}
+
+.rs-fullvideo-cover {background-color: rgba(0, 0, 0, 0.4) !important;}
+
+.wing-slider-button{font-family: 'museo-slab'!important; font-weight: 600!important;}
+
+.wing-slider-text{font-family: 'museo-slab'!important; font-weight: 300!important; text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);}
+
+.tp-bullets{
+	.tp-bullet{.border-radius(); width: 35px!important; height: 5px!important;
+		&:before{content: ""; width: 35px!important; height: 35px!important; display: block; margin-top: -15px;}
+
+	}
+	.selected{background: @blue;}
+}
+
+.tp-mask-wrap{
+	.tp-caption{
+		
+		.html5vid, .fullcoveredvideo{pointer-events: none!important;}
+		
+		.tp-video-controls{background-image: linear-gradient(to bottom,#0091d2 ,#0091d2)!important; opacity: 1!important; width: 100%!important; padding: 5px 15px!important;
+			&:hover{opacity: 1!important;}
+			.tp-video-button-wrap{
+				.tp-video-button, .tp-vid-play-pause{background: transparent!important; color: @white!important;}
+				.tp-vid-mute, .tp-vid-play-pause{display: none!important;}
+				.tp-video-play-button{display: none!important;}
+				.tp-vid-full-screen{background: transparent!important; color: transparent!important; position: fixed; right: 30px; bottom: 70px!important; .border-radius (@border-radius: 0px); line-height: 0!important; font-size: 0!important;	
+					&:before{background: @blue!important; height: 40px; color: @white; display: table-cell; vertical-align: middle; text-align: center; content: ""; font: normal normal normal 14px/1 FontAwesome!important; width: 55px!important;}	
+					&:hover{
+						&:before{background: #0091d2!important;}
+					}	
+				}
+			}
+			.tp-video-seek-bar-wrap{width: 100%!important; height: 30px!important; padding: 0px 15px!important;
+				.tp-seek-bar{background: white!important; -webkit-appearance: media-controls-background!important; height: 5px!important;}
+			}
+			.tp-video-button-wrap{padding: 0!important;
+				.tp-vid-mute{display: none!important;}
+			}
+			.tp-video-vol-bar-wrap{display: none!important;}
+		}
+	}
+}
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1024PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 1024px) {
+
+
+	/* HOMEPAGE SLIDER */
+	
+	.wing-slider-arrow{display: none!important;} 
+
+
+}
